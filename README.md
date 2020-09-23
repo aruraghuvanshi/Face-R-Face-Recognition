@@ -9,7 +9,7 @@ There is no need to make any changes in the facerecognition2.py as it is designe
 # How to Use:
 Webcam Mode:
 1. Open Config.py and make changes to add your dataset path that will be used to train your images.
-2. To use webcam feed, set the mode flag of Face-R to 'webcam' keep dronemode = False
+2. To use webcam feed, set the mode flag of Face-R to 'webcam' keep dronecam = False
 3. Run the facerecognition2.py script and bring the people in front of the webcam to test. Rectangles and names will appear on the recognised faces in the video feed.
 
 Image Mode:
@@ -19,5 +19,5 @@ Image Mode:
 
 Drone Mode:
 If you have the DJI Ryze Tello drone, you can use the face recognizer.
-1. Open Config.py and make and set mode to 'webcam' and dronemode to 'True.
+1. Open Config.py and make and set mode to 'webcam' and dronecam to 'True.
 2. Run the facerecognition2.py script. The drone feed will contain rectangles of the recognised faces once those people appear in front of the drone.
