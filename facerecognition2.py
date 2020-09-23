@@ -70,10 +70,10 @@ def runFaceRecognizer(path=datasetpath, verbose=verbose, mode=mode):
             process = not process
             if verbose: print(f'Face Detected - {face_names}')
             for (top, right, bottom, left), name in zip(face_locations, face_names):
-                top *= 4
-                right *= 4
-                bottom *= 4
-                left *= 4
+                top *= 1
+                right *= 1
+                bottom *= 1
+                left *= 1
                 cv2.rectangle(frame, (left, top), (right, bottom), (0, 255, 0), 2)
                 # cv2.rectangle(frame, (left, bottom - 10), (right, bottom), (0, 255, 0), cv2.FILLED)
                 font = cv2.FONT_HERSHEY_DUPLEX
