@@ -6,25 +6,32 @@ CONFIGURATIONS FILE
 
 import cv2
 
-datasetpath = 'C:\\Users\\void_\\PycharmProjects\\FaceRecognition\\PROJECT FACEX\\dataset2'
-imagepath = 'C:\\Users\\void_\\PycharmProjects\\FaceRecognition\\PROJECT FACEX\\static\\test3.jpg'
+datasetpath = 'C:\\Users\\void_\\PycharmProjects\\FaceRecognition\\PROJECT FACE-R\\dataset2'
+imagepath = 'C:\\Users\\void_\\PycharmProjects\\FaceRecognition\\PROJECT FACE-R\\static\\test0.jpg'
 
 
 verbose = False                             # to see background computations and numeric video stream
 
 
-mode = 'webcam'; dronecam = False           # modes are 'webcam', 'image'
+mode = 'image'
+dronecam = False           # modes are 'webcam', 'image'
 
+def scale(path):
 
-im = cv2.imread(imagepath)
-if im.shape[0] > 2000:
-    scale = 0.25                            # For large jpgs like camera pictures from phones or high MP
-elif 1000 > im.shape[0] >= 2000:
-    scale = 0.5                             # For medium jpgs
-elif 500 > im.shape[0] >= 1000:
-    scale = 0.75                            # For whatsapp jpgs or small compressed images
-else:
-    scale = 1.0
+    im = cv2.imread(path)
+    if im.shape[0] > 2000:
+        scale = 0.25                            # For large jpgs like camera pictures from phones or high MP
+    elif 1000 > im.shape[0] >= 2000:
+        scale = 0.5                             # For medium jpgs
+    elif 500 > im.shape[0] >= 1000:
+        scale = 0.75                            # For whatsapp jpgs or small compressed images
+    else:
+        scale = 1.0
+
+    return scale
+
+if mode == 'image':
+    scale = scale(path=imagepath)
 
 
 trainflag = False                           # Turn True If a new model has to be trained else False
@@ -40,7 +47,8 @@ order corresponding to the name in the list below.
 
 '''
 
-train_names = ['add', 'your', 'names', 'here']
+train_names = ['Aru', 'Supriya', 'Sheet', 'Gauri', 'Mum', 'Dad', 'DubuDubu', 'Papa', 'Mummy',
+               'Jassi', 'Macho', 'Rajgopal', 'Tasneem', 'Hanisha', 'Kullu']
 
 
 

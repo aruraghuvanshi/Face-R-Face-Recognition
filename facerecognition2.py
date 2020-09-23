@@ -19,6 +19,7 @@ from config import scale, imagepath, mode, dronecam
 import pickle
 import time
 import warnings
+from thewhitetello import TheWhiteTello
 warnings.filterwarnings('ignore')
 
 
@@ -45,9 +46,13 @@ def runFaceRecognizer(path=datasetpath, verbose=verbose, mode=mode):
     if mode == 'webcam':
         print('\033[1;33mSTARTING\033[0m Video Stream. Press \033[1;34mESC\033[0m to end program.')
         if dronecam:
+            t = TheWhiteTello()
+            t.connect()
+            t.streamon()
             cap = cv2.VideoCapture('udp://@0.0.0.0:11111')
         else:
             cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+
         while True:
             ret, frame = cap.read()
             small_frame = cv2.resize(frame, (0, 0), fx=scale, fy=scale)
@@ -78,7 +83,7 @@ def runFaceRecognizer(path=datasetpath, verbose=verbose, mode=mode):
                 # cv2.rectangle(frame, (left, bottom - 10), (right, bottom), (0, 255, 0), cv2.FILLED)
                 font = cv2.FONT_HERSHEY_DUPLEX
                 cv2.putText(frame, name, (left+6, bottom-12), font, 0.7, (255, 255, 255), 1)
-                # cv2.putText(frame, '-- Aru Raghuvanshi', (left+6, bottom-4), font, 0.3, (255, 0, 0), 1)
+                # cv2.putText(frame, '-- AROX.AI', (left+6, bottom-4), font, 0.3, (255, 0, 0), 1)
 
             cv2.imshow('Video', frame)
 
@@ -121,7 +126,7 @@ def runFaceRecognizer(path=datasetpath, verbose=verbose, mode=mode):
             # cv2.rectangle(frame, (left, bottom - 10), (right, bottom), (0, 255, 0), cv2.FILLED)
             font = cv2.FONT_HERSHEY_DUPLEX
             cv2.putText(frame, name, (left + 6, bottom - 12), font, 0.7, (255, 255, 255), 1)
-            # cv2.putText(frame, '-- Aru Raghuvanshi', (left+6, bottom-4), font, 0.3, (255, 0, 0), 1)
+            # cv2.putText(frame, '-- AROX.AI', (left+6, bottom-4), font, 0.3, (255, 0, 0), 1)
 
 
         cv2.imshow('image', frame)
