@@ -40,8 +40,7 @@ order corresponding to the name in the list below.
 
 '''
 
-train_names = ['Aru', 'Supriya', 'Sheet', 'Gauri', 'Mum', 'Dad', 'DubuDubu', 'Papa', 'Mummy',
-               'Jassi', 'Macho', 'Rajgopal', 'Tasneem', 'Hanisha', 'Kullu']
+train_names = ['add', 'your', 'names', 'here']
 
 
 
