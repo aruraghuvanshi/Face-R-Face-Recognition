@@ -1,5 +1,5 @@
 # Face-R 
-Face-R is a Face Recognition script developed in Python which can be used with PC webcam feed, an image and a even on the DJI Tello flying Drone video feed.
+Face-R is a Face Recognition script developed in Python which can be used with PC webcam feed, an image and even on the DJI Tello flying Drone video feed. In fact it can be used on any video stream whose video stream port is known.
 
 All Option and configurations can be set up by making changes to the config.py script.
 There is no need to make any changes in the facerecognition2.py as it is designed so that users don't confuse themselves during changing figures; config takes care of that.
